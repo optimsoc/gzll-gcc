@@ -2173,7 +2173,7 @@ nios2-*-*)
 		;;
         esac
 	;;
-or1k-*-elf*)
+or1k-*-elf* | or1k-*-gzll*)
        tm_file="${tm_file} dbxelf.h elfos.h newlib-stdint.h ${cpu_type}/elf.h"
        extra_parts="crti.o crtbegin.o crtend.o crtn.o"
        tmake_file=or1k/t-or1k
@@ -2188,7 +2188,7 @@ or1k*-*-rtems*)
        tm_file="${tm_file} newlib-stdint.h or1k/rtems.h rtems.h"
        extra_parts="crti.o crtbegin.o crtend.o crtn.o"
        ;;
-or1knd-*-elf*)
+or1knd-*-elf* | or1knd-*-gzll*)
        tm_file="${tm_file} dbxelf.h elfos.h newlib-stdint.h ${cpu_type}/elf.h"
        extra_parts="crti.o crtbegin.o crtend.o crtn.o"
        tmake_file=or1k/t-or1knd
