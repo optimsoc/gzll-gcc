@@ -2173,7 +2173,7 @@ nios2-*-*)
 		;;
         esac
 	;;
-or1k-*-elf* | or1k-*-gzll*)
+or1k-*-elf*)
        tm_file="${tm_file} dbxelf.h elfos.h newlib-stdint.h ${cpu_type}/elf.h"
        extra_parts="crti.o crtbegin.o crtend.o crtn.o"
        tmake_file=or1k/t-or1k
@@ -2188,7 +2188,7 @@ or1k*-*-rtems*)
        tm_file="${tm_file} newlib-stdint.h or1k/rtems.h rtems.h"
        extra_parts="crti.o crtbegin.o crtend.o crtn.o"
        ;;
-or1knd-*-elf* | or1knd-*-gzll*)
+or1knd-*-elf*)
        tm_file="${tm_file} dbxelf.h elfos.h newlib-stdint.h ${cpu_type}/elf.h"
        extra_parts="crti.o crtbegin.o crtend.o crtn.o"
        tmake_file=or1k/t-or1knd
@@ -2198,6 +2198,12 @@ or1knd-*-linux-*)
        tm_file="${tm_file} dbxelf.h elfos.h or1k/elf.h linux.h or1k/linux-gas.h or1k/linux-elf.h uclibc-stdint.h"
        tmake_file="or1k/t-or1knd or1k/t-linux ${tmake_file}"
        tm_defines="${tm_defines} OR1K_DELAY_DEFAULT=OR1K_DELAY_OFF"
+       ;;
+or1k-*-gzll*)
+       tm_file="${tm_file} dbxelf.h elfos.h newlib-stdint.h ${cpu_type}/elf.h ${cpu_type}/gzll.h"
+       extra_parts="crti.o crtbegin.o crtend.o crtn.o"
+       tmake_file=or1k/t-or1k
+       tm_defines="${tm_defines} OR1K_DELAY_DEFAULT=OR1K_DELAY_ON"
        ;;
 pdp11-*-*)
 	tm_file="${tm_file} newlib-stdint.h"
