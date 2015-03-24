@@ -35,4 +35,4 @@ along with GCC; see the file COPYING3.  If not see
 #define ENDFILE_SPEC   ""
 
 #undef LIB_SPEC
-#define LIB_SPEC "-e 0x2000"
+#define LIB_SPEC "-e 0x2000 -lc"
