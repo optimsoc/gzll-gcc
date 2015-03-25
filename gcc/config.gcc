@@ -2202,7 +2202,7 @@ or1knd-*-linux-*)
 or1k-*-gzll*)
        tm_file="${tm_file} dbxelf.h elfos.h newlib-stdint.h ${cpu_type}/elf.h ${cpu_type}/gzll.h"
        extra_parts="crti.o crtbegin.o crtend.o crtn.o"
-       tmake_file=or1k/t-or1k
+       tmake_file=or1k/t-gzll
        tm_defines="${tm_defines} OR1K_DELAY_DEFAULT=OR1K_DELAY_ON"
        ;;
 pdp11-*-*)
