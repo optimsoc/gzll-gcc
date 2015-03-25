@@ -29,10 +29,14 @@ along with GCC; see the file COPYING3.  If not see
   while (0)
 
 #undef STARTFILE_SPEC
-#define STARTFILE_SPEC ""
+#define STARTFILE_SPEC \
+  "%{!shared:%{pie:Scrt0.o%s;:crt0.o%s}}"
 
 #undef ENDFILE_SPEC
 #define ENDFILE_SPEC   ""
 
 #undef LIB_SPEC
-#define LIB_SPEC "-e 0x2000 -lc"
+#define LIB_SPEC "-lc"
+
+#undef LINK_SPEC
+#define LINK_SPEC "--entry=_start"
